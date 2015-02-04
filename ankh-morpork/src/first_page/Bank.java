@@ -19,6 +19,6 @@ public class Bank {
     public static int Trolls_not_on_board = 3;
     public static int Demons_not_on_board = 4;
     public static int TroubleMarkers_not_on_board = 9;
-       
+    
     
 }

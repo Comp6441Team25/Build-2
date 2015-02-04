@@ -35,4 +35,4 @@ public class Player implements Serializable {
 	public boolean turn = false;
 	
         
- }
+}

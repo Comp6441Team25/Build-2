@@ -286,7 +286,7 @@ public first_page() {
  * @param evt 
  */
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
-    
+        // TODO add your handling code here:
         if(radio1.isSelected())
             no_of_players = 2;
         else if(radio2.isSelected())
@@ -331,7 +331,10 @@ public first_page() {
         sp.Apersonality.setText(playerObj[0].Personality);
         sp.Aminions.setText(String.valueOf(playerObj[0].minionInHand));
         sp.Abuildings.setText(String.valueOf(playerObj[0].buildInHand));
+<<<<<<< HEAD
         sp.Acash.setText(String.valueOf(playerObj[0].cashInHand));
+=======
+>>>>>>> origin/master
         sp.Aarea.setText("0");
         for(int j=0;j<5;j++)
             cards += playerObj[0].CardsInHand[j] + "  ";
@@ -352,6 +355,10 @@ public first_page() {
 
         if(filename.getText().equals("")){
             notify.setVisible(true);
+<<<<<<< HEAD
+=======
+            //notify.setText("Please select a file to load");
+>>>>>>> origin/master
         }
         else{
             notify.setVisible(false);
@@ -364,7 +371,18 @@ public first_page() {
         
         int num = oi.readInt();
 
+<<<<<<< HEAD
           for(int j=0;j<num;j++){
+=======
+        
+        /*        for(int i=0;i<num;i++){
+        
+        Player playerObj1;
+                playerObj1 = (Player)oi.readObject();
+        }
+        
+*/          for(int j=0;j<num;j++){
+>>>>>>> origin/master
              if(playerObj[j].turn)
                 first_page.active_turn = j; 
                 System.out.println("player: " + (j+1) + playerObj[j].turn);
@@ -404,7 +422,11 @@ public first_page() {
         
     close();  
     }//GEN-LAST:event_goActionPerformed
+<<<<<<< HEAD
 }
+=======
+    }
+>>>>>>> origin/master
     /**
      * @param image1 object for image class 
      * @param area object for gameArea class

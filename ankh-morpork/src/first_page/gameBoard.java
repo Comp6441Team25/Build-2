@@ -8,7 +8,11 @@ package first_page;
 
 /**
  *
+<<<<<<< HEAD
  * @author dell
+=======
+ * @author user
+>>>>>>> origin/master
  */
 public class gameBoard extends javax.swing.JFrame {
 
@@ -560,17 +564,21 @@ public class gameBoard extends javax.swing.JFrame {
     
     }//GEN-LAST:event_place
 
+<<<<<<< HEAD
     /**
      * sets visibility of pieces on board according player's detail
      * 
      * 
      * @param evt 
      */
+=======
+>>>>>>> origin/master
     private void arrange(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_arrange
         tm1.setBounds(428, 668, 13, 13);       
         tm2.setBounds(460, 483, 13, 13); 
         tm3.setBounds(510, 103, 13, 13); 
         
+<<<<<<< HEAD
         System.out.println("value for color:" + first_page.playerObj[0].Color+ "good,");
         for(int i=0;i<first_page.playerObj.length;i++){
         System.out.println("value for color:" + first_page.playerObj[0].Color+ "for,");
@@ -578,10 +586,16 @@ public class gameBoard extends javax.swing.JFrame {
             if(first_page.playerObj[i].Color.equals("red")){
                 
                 System.out.println("red");
+=======
+        //System.out.println("value for color:" + first_page.playerObj[0].Color+ "good,");
+        for(int i=0;i<first_page.playerObj.length;i++){
+            if(first_page.playerObj[i].Color == "red"){
+>>>>>>> origin/master
         Rmin1.setBounds(440, 678, 11, 10);
         Rmin2.setBounds(470, 493, 11, 10);
         Rmin3.setBounds(520, 113, 11, 10);
             }
+<<<<<<< HEAD
         if(first_page.playerObj[i].Color .equals("green")){
         Gmin1.setBounds(455, 678, 11, 10);
         Gmin2.setBounds(485, 493, 11, 10);
@@ -601,16 +615,37 @@ public class gameBoard extends javax.swing.JFrame {
         Ymin3.setBounds(565, 113, 11, 10);
         
                 System.out.println("y");
+=======
+        if(first_page.playerObj[i].Color == "green"){
+        Gmin1.setBounds(455, 678, 11, 10);
+        Gmin2.setBounds(485, 493, 11, 10);
+        Gmin3.setBounds(535, 113, 11, 10);
+        }
+        if(first_page.playerObj[i].Color == "blue"){
+        Bmin1.setBounds(470, 678, 11, 10);
+        Bmin2.setBounds(500, 493, 11, 10);
+        Bmin3.setBounds(550, 113, 11, 10);
+        }
+        if(first_page.playerObj[i].Color == "yellow"){
+        Ymin1.setBounds(485, 678, 11, 10);
+        Ymin2.setBounds(515, 493, 11, 10);
+        Ymin3.setBounds(565, 113, 11, 10);
+>>>>>>> origin/master
         }
         }
     }//GEN-LAST:event_arrange
 
+<<<<<<< HEAD
     /**
      * remove pieces from the board
      * 
      */
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+=======
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            System.out.println("in back:");
+>>>>>>> origin/master
         Rmin1.setBounds(30, 40, 11, 10);
         Gmin1.setBounds(280, 40, 11, 10);
         Bmin1.setBounds(530, 40, 11, 10);
@@ -627,6 +662,44 @@ public class gameBoard extends javax.swing.JFrame {
         Ymin3.setBounds(820, 40, 11, 10);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+<<<<<<< HEAD
+=======
+    /**
+     * @param args the command line arguments
+     */
+/*    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        /*try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(gameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(gameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(gameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(gameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+  /*      java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new gameBoard().setVisible(true);
+            }
+        });
+    }
+*/
+>>>>>>> origin/master
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bbuild1;
     private javax.swing.JLabel Bbuild2;

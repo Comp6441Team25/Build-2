@@ -9,7 +9,10 @@ import ankh.morpork.AnkhMorpork;
 import static first_page.first_page.active_turn;
 import static first_page.first_page.image1;
 import static first_page.first_page.playerObj;
+<<<<<<< HEAD
 import java.awt.event.KeyEvent;
+=======
+>>>>>>> origin/master
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -30,7 +33,11 @@ String cards ="";
 static int one = 1;
 public static Player p;
 String[] s1;
+<<<<<<< HEAD
 public Bank bank = new Bank();
+=======
+
+>>>>>>> origin/master
 /**
      * Creates new form second_page
      */
@@ -271,6 +278,7 @@ public Bank bank = new Bank();
                     .addComponent(jButton4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+<<<<<<< HEAD
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 51)));
 
@@ -344,6 +352,77 @@ public Bank bank = new Bank();
             }
         });
 
+=======
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 51)));
+
+        jLabel2.setText("Enter Amout");
+
+        amountText.setText("0.00");
+        amountText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amountTextActionPerformed(evt);
+            }
+        });
+
+        payGroup.add(payRadio);
+        payRadio.setSelected(true);
+        payRadio.setText("Make a Payment");
+
+        payGroup.add(fundRadio);
+        fundRadio.setText("Receive Fund");
+
+        jButton5.setText("Go");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton5))
+                    .addComponent(payRadio)
+                    .addComponent(fundRadio)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(amountText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(amountText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(payRadio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fundRadio)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 51)));
+
+        jButton2.setText("Roll a Dice");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> origin/master
         diceV.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -579,12 +658,23 @@ public Bank bank = new Bank();
         Acolor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         Acash.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+<<<<<<< HEAD
+=======
+        Acash.setText("10");
+>>>>>>> origin/master
 
         Acards.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         Aminions.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+<<<<<<< HEAD
 
         Abuildings.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+=======
+        Aminions.setText("12");
+
+        Abuildings.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Abuildings.setText("6");
+>>>>>>> origin/master
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("Area :");
@@ -670,11 +760,19 @@ public Bank bank = new Bank();
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
+=======
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+>>>>>>> origin/master
                                 .addComponent(LactivePlayer)
                                 .addGap(49, 49, 49)
                                 .addComponent(Lplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -752,9 +850,13 @@ public Bank bank = new Bank();
             cards += playerObj[active_turn].CardsInHand[j] + "  ";        
             Acards.setText(cards);
             Apersonality.setText(playerObj[first_page.active_turn].Personality);
+<<<<<<< HEAD
             Acash.setText(String.valueOf(playerObj[first_page.active_turn].cashInHand));
             Aminions.setText(String.valueOf(playerObj[first_page.active_turn].minionInHand));
             Abuildings.setText(String.valueOf(playerObj[first_page.active_turn].buildInHand));
+=======
+        
+>>>>>>> origin/master
         if(first_page.active_turn == (playerObj.length - one))
         {
             cards = " ";
@@ -782,6 +884,13 @@ public Bank bank = new Bank();
             notify.setText("Please Select a file");
         else
         {
+<<<<<<< HEAD
+=======
+        
+        /*
+        storing all the values for each players by calling ls.func()
+        */
+>>>>>>> origin/master
 
         FileOutputStream fileOut = null;
      try {
@@ -818,6 +927,48 @@ public Bank bank = new Bank();
      notify.setText("Your file has been saved successfully!");
          System.out.printf("Serialized data is saved in /tmp/employee.ser");
     
+<<<<<<< HEAD
+=======
+        // details to be stored in text file 
+/*        
+        for (int i=0;i<playerObj.length;i++)
+        {
+            String s=" CARDS-IN-HAND  COLOR  PERSONALITY  BUILD-IN-HAND  MINION-IN-HAND  CASH-IN-HAND  SAVE_TURN ";
+            String space="  ";
+            s1= new String[playerObj.length];
+            for(int j=0;j<5;j++)
+            s1[i] = s1[i] + playerObj[i].CardsInHand[j];
+
+      try
+        {
+            BufferedWriter bw=new BufferedWriter(new FileWriter("savegame.txt"));
+            bw.write(s);
+            bw.newLine();
+            for(int j=0;j<playerObj.length;j++)
+            {
+            bw.write(s1[j]);
+            bw.write(space);
+            }
+            bw.write(playerObj[i].Color);
+            bw.write(space);            
+            bw.write(playerObj[i].Personality);
+            bw.write(space);
+            bw.write(playerObj[i].buildInHand);
+            bw.write(space);
+            bw.write(playerObj[i].minionInHand);
+            bw.write(space);
+            bw.write(playerObj[i].cashInHand);
+            bw.write(space);
+            bw.write(playerObj[i].save_turn);
+            bw.write(space);
+            bw.newLine();
+        }
+        catch(IOException ie)
+        {
+        System.out.println("error");
+        }
+}*/
+>>>>>>> origin/master
        }   
     }//GEN-LAST:event_savegameButtonActionPerformed
 
@@ -902,6 +1053,7 @@ public Bank bank = new Bank();
     }//GEN-LAST:event_personalityButtonActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+<<<<<<< HEAD
         if(payRadio.isSelected())
         bank.payment(playerObj[active_turn].cashInHand);
         else if(fundRadio.isSelected())
@@ -920,6 +1072,13 @@ public Bank bank = new Bank();
             evt.consume();
     }
     }//GEN-LAST:event_amountTextKeyTyped
+=======
+
+       
+            
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+>>>>>>> origin/master
 
     /**
      * @param args the command line arguments

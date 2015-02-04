@@ -29,11 +29,11 @@ public class first_page extends javax.swing.JFrame {
     String cards = "";
     static int active_turn;
     AnkhMorpork obj = new AnkhMorpork();
-    static second_page sp = new second_page();
+   static second_page sp = new second_page();
     public static Player[] playerObj;
     public static gameArea[] area;
     public static Bank bank;    
-    static image image1;
+    public static image image1;
     /** 
    * Creates new form first_page
      */
@@ -51,9 +51,8 @@ public first_page() {
      
      WindowEvent winCloseEvent = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
      Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winCloseEvent);
-     
-     
-     }
+
+    }
 
 @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -73,6 +72,7 @@ public first_page() {
         player = new javax.swing.JLabel();
         playButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        notify = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -150,6 +150,8 @@ public first_page() {
             }
         });
 
+        notify.setText("Please select a file to load");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,11 +169,13 @@ public first_page() {
                                 .addComponent(filename, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
-                                .addComponent(go))))
+                                .addComponent(go)
+                                .addGap(18, 18, 18)
+                                .addComponent(notify))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addComponent(player)))
-                .addGap(0, 209, Short.MAX_VALUE))
+                .addGap(0, 194, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -210,7 +214,9 @@ public first_page() {
                         .addComponent(load_game)
                         .addComponent(filename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(go)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(go)
+                    .addComponent(notify))
                 .addGap(18, 18, 18)
                 .addComponent(player)
                 .addGap(18, 18, 18)
@@ -240,6 +246,8 @@ public first_page() {
         File f = jfc.getSelectedFile();
         String fname = f.getAbsolutePath();
         filename.setText(fname);
+        go.setVisible(true);
+        
     }//GEN-LAST:event_load_gameActionPerformed
 
     private void new_gameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_gameActionPerformed
@@ -253,14 +261,13 @@ public first_page() {
        radio3.setVisible(true);
        player.setVisible(true);
        playButton.setVisible(true);
-       sp.name_label.setVisible(false);
+       sp.nameLabel.setVisible(false);
        sp.nameText.setVisible(false);
        
     }//GEN-LAST:event_new_gameActionPerformed
 
     private void filenameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filenameActionPerformed
         // TODO add your handling code here:
-  
     }//GEN-LAST:event_filenameActionPerformed
 
     private void radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio1ActionPerformed
@@ -298,6 +305,7 @@ public first_page() {
             playerObj[i] = new Player();
             playerObj[i].minionInHand = 9;
             playerObj[i].buildInHand = 6;
+            playerObj[i].cashInHand = 10;
         }
         
         // assign minions to initial areas
@@ -321,7 +329,10 @@ public first_page() {
         sp.Lplayer.setText("Player " + (active_turn+1));
         sp.Acolor.setText( playerObj[0].Color);
         sp.Apersonality.setText(playerObj[0].Personality);
-        
+        sp.Aminions.setText(String.valueOf(playerObj[0].minionInHand));
+        sp.Abuildings.setText(String.valueOf(playerObj[0].buildInHand));
+        sp.Acash.setText(String.valueOf(playerObj[0].cashInHand));
+        sp.Aarea.setText("0");
         for(int j=0;j<5;j++)
             cards += playerObj[0].CardsInHand[j] + "  ";
         
@@ -337,23 +348,35 @@ public first_page() {
  */
     private void goActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goActionPerformed
 
-        try {
+     // TODO add your handling code here:
+
+        if(filename.getText().equals("")){
+            notify.setVisible(true);
+        }
+        else{
+            notify.setVisible(false);
+            try {
             
         FileInputStream fi = new FileInputStream(filename.getText());
         
         ObjectInputStream oi = new ObjectInputStream(fi);
-        first_page.playerObj = (Player[])oi.readObject();
+        playerObj = (Player[])oi.readObject();
         
         int num = oi.readInt();
+
           for(int j=0;j<num;j++){
              if(playerObj[j].turn)
                 first_page.active_turn = j; 
                 System.out.println("player: " + (j+1) + playerObj[j].turn);
             }
             System.out.println("active turn: "  + first_page.active_turn);
+
+        for(int i=0;i<playerObj.length;i++){
+            bank.cash = bank.cash - playerObj[i].cashInHand;
         
-            
-        bank.cash = bank.cash - playerObj.length*10;
+        }
+       
+        
         sp.setVisible(true);
         sp.Lplayer.setText("Player " + (active_turn+1));
         sp.Acolor.setText( playerObj[active_turn].Color);
@@ -361,6 +384,9 @@ public first_page() {
         for(int j=0;j<5;j++)
             cards += playerObj[active_turn].CardsInHand[j] + "  ";
         sp.Acards.setText(cards);
+        sp.Acash.setText(String.valueOf(playerObj[active_turn].cashInHand));
+        sp.Aminions.setText(String.valueOf(playerObj[active_turn].minionInHand));
+        sp.Abuildings.setText(String.valueOf(playerObj[active_turn].buildInHand));
         sp.bankText.setText(String.valueOf(bank.cash));
         sp.playerText.setText(String.valueOf(playerObj.length));
         sp.tmText.setText(String.valueOf(bank.TroubleMarkers_not_on_board));
@@ -378,12 +404,13 @@ public first_page() {
         
     close();  
     }//GEN-LAST:event_goActionPerformed
-
+}
     /**
-     * @param iamage1 object for image class 
+     * @param image1 object for image class 
      * @param area object for gameArea class
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -417,7 +444,6 @@ public first_page() {
         {
             area[i] = new gameArea();
             area[i].areaNumber = i+1;
- 
         }
         
         area[0].areaName = "Dolly Sisters";
@@ -469,9 +495,15 @@ public first_page() {
     fp.playButton.setVisible(false);
     sp.savegameButton.setVisible(false);
     sp.nameText.setVisible(false);
-    sp.name_label.setVisible(false);
+    sp.nameLabel.setVisible(false);
     image1.setVisible(false);
-
+    image1.imageLabel.setVisible(false);
+    image1.events.setVisible(false);
+    image1.personality.setVisible(false);
+    fp.go.setVisible(false);
+    fp.notify.setVisible(false);
+    sp.notify.setVisible(false);
+    sp.cancel.setVisible(false);
     java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
             }
@@ -487,6 +519,7 @@ public first_page() {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton load_game;
     private javax.swing.JButton new_game;
+    private javax.swing.JLabel notify;
     private javax.swing.JButton playButton;
     private javax.swing.JLabel player;
     private javax.swing.JRadioButton radio1;

@@ -15,21 +15,18 @@ import view.Bank;
 
 /**
  *
- * @author kumaran
+ *Creating test case for AnkhMorpork class
  */
 public class AnkhMorporkTest {
     
     AnkhMorpork a=new AnkhMorpork();
     Bank b=new Bank();
-    /**
-     *
-     */
-    
+      
     public AnkhMorporkTest() {
        
     }
     /**
-     *
+     * Testcase for shuffle cards
      */
     @Test 
     public void test1()
@@ -37,18 +34,14 @@ public class AnkhMorporkTest {
   assertTrue(a.shuffleCards(2));
   //System.out.println("1");
     }
-    /**
-     *
-     */
+    
     @Test 
     public void test2()
     { 
   assertTrue(a.shuffleCards(3));
   //System.out.println("2");  
     }
-     /**
-     *
-     */
+    
     @Test 
     public void test3()
     { 
@@ -56,18 +49,14 @@ public class AnkhMorporkTest {
     //System.out.println("3");
     }
       
-       /**
-     *
-     */
+    
     @Test 
     public void test4()
     {
   assertEquals(false,a.shuffleCards(1));
     //System.out.println("4");
     }
-     /**
-     *
-     */
+    
     @Test 
     public void test5()
     {
@@ -78,7 +67,7 @@ public class AnkhMorporkTest {
    
  
     /**
-     *
+     *Testcase for Turn
      */
     @Test
     public void test6()
@@ -87,28 +76,21 @@ public class AnkhMorporkTest {
          //System.out.println("6");
     }
     
-    /**
-     *
-     */
+   
     @Test
     public void test7()
     {
     assertEquals(false,a.turn(5));
       //System.out.println("7");   
     }  
-     
-     /**
-     *
-     */
+   
     public void test8() 
     {a=new AnkhMorpork();
     assertTrue(a.next_turn(0));
       //System.out.println("8");
     }
     
-     /**
-     *
-     */
+     
     @Test
     public void test9() 
     {a=new AnkhMorpork();
@@ -116,16 +98,16 @@ public class AnkhMorporkTest {
     //System.out.println("9");
     }
      
-    /**
-     *
-     */
+    
     @Test
     public void test10() 
     {
     assertEquals(false,a.next_turn(4));
    // System.out.println("10");
     }
-   
+   /*
+    *Testcase for assigning colors
+    */
      @Test
       public void test12()
      {
@@ -138,19 +120,7 @@ public class AnkhMorporkTest {
      {
      System.out.println("returning null object");}
      }
-      @Test
-       public void test13()
-     {
-         try{
-     String[] pl={"red","blue","green"};
-         
-    assertTrue(a.distribute(pl));
-         }
-         catch(NullPointerException ne)
-         {System.out.println("returning null object");
-         }
-          
-     }
+      
        @Test
         public void test14()
      {
@@ -167,7 +137,9 @@ public class AnkhMorporkTest {
     assertEquals(false,a.distribute(pl));
       
       }
-            
+       /*
+          *Testcase for cash payment
+          */     
         
       @Test
         public void test16()

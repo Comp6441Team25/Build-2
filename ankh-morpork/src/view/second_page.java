@@ -745,7 +745,14 @@ public Bank bank = new Bank();
      * @see next_turn(integer i) change the turn of the player
      */
     private void BendTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BendTurnActionPerformed
-
+    if(first_page.active_turn == (playerObj.length - one))
+        {
+            cards = " ";
+            obj.next_turn(first_page.active_turn);
+            first_page.active_turn = -1;
+            
+    }
+    
         first_page.active_turn = one + first_page.active_turn;
         Lplayer.setText("Player " + (first_page.active_turn + one));
         
@@ -757,18 +764,11 @@ public Bank bank = new Bank();
             Acash.setText(String.valueOf(playerObj[first_page.active_turn].cashInHand));
             Aminions.setText(String.valueOf(playerObj[first_page.active_turn].minionInHand));
             Abuildings.setText(String.valueOf(playerObj[first_page.active_turn].buildInHand));
-        if(first_page.active_turn == (playerObj.length - one))
-        {
-            cards = " ";
-            obj.next_turn(first_page.active_turn);
-            first_page.active_turn = -1;
-            
-    }
-        else{
+    //    else{
             
             cards = " ";
             obj.next_turn(first_page.active_turn);
-        }
+      //  }
 
         System.out.println(playerObj[0].CardsInHand);
         
